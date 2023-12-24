@@ -44,7 +44,9 @@ class TaskController extends Controller
 
     public function edit(Task $task)
     {
-        return view('tasks.edit', compact('task'));
+        $projects = Project::all(); // Retrieve all projects from the database
+
+        return view('tasks.edit', compact('task', 'projects'));
     }
 
     public function updatePriority(Request $request)

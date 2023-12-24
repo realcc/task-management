@@ -10,17 +10,34 @@
                 @method('PUT')
 
                 <!-- Task form fields -->
-                <label for="name">Task Name:</label>
-                <input type="text" name="name" value="{{ $task->name }}" required>
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Task Name:</label>
+                        <input type="text" class="form-control" name="name" value="{{ $task->name }}" required>
+                    </div>
 
-                <label for="priority">Priority:</label>
-                <input type="number" name="priority" value="{{ $task->priority }}" required>
+                    <div class="mb-3">
+                        <label for="priority" class="form-label">Priority:</label>
+                        <input type="number" class="form-control" name="priority" value="{{ $task->priority }}" required>
+                    </div>
 
-                <!-- Add more fields as needed -->
+                    <div class="mb-3">
+                        <label for="project" class="form-label">Project:</label>
+                        <select name="project_id" class="form-control">
+                            @foreach($projects as $project)
+                                <option value="{{ $project->id }}" {{ $project->id == $task->project_id ? 'selected' : '' }}>
+                                    {{ $project->name }}
+                                </option>
+                            @endforeach
+                        </select>
+                    </div>
 
-                <div class="mt-3">
-                    <button type="submit" class="btn btn-primary">Update Task</button>
-                    <a href="{{ route('tasks.index') }}" class="btn btn-secondary">Cancel</a>
+                    <!-- Add more fields as needed -->
+
+                    <div class="mt-3">
+                        <button type="submit" class="btn btn-primary">Update Task</button>
+                        <a href="{{ route('tasks.index') }}" class="btn btn-secondary">Cancel</a>
+                    </div>
                 </div>
             </form>
         </div>
