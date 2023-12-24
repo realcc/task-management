@@ -2,9 +2,11 @@
 
 This is a simple task management application built with Laravel.
 
-## Screenshot
+## Screenshots
 
-![Task Management Screenshot](screenshots/ui.png)
+![Task Management Main UI](screenshots/main.png)
+
+![Task Management Edit UI](screenshots/edit.png)
 
 ## Getting Started
 

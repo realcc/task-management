@@ -25,9 +25,14 @@ class TaskController extends Controller
 
     public function update(Request $request, Task $task)
     {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'priority' => 'required|integer',
+        ]);
+
         $task->update($request->all());
 
-        return response()->json(['success' => true]);
+        return redirect()->route('tasks.index')->with('success', 'Task updated successfully!');
     }
 
     public function destroy(Task $task)
@@ -35,6 +40,11 @@ class TaskController extends Controller
         $task->delete();
 
         return response()->json(['success' => true]);
+    }
+
+    public function edit(Task $task)
+    {
+        return view('tasks.edit', compact('task'));
     }
 
     public function updatePriority(Request $request)

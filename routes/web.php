@@ -22,3 +22,5 @@ Route::get('/', [TaskController::class, 'index']);
 Route::resource('tasks', TaskController::class);
 Route::post('/tasks/update-priority', [TaskController::class, 'updatePriority'])->name('tasks.updatePriority');
 Route::delete('/tasks/{task}', [TaskController::class, 'destroy'])->name('tasks.destroy');
+Route::get('/tasks/{task}/edit', [TaskController::class, 'edit'])->name('tasks.edit');
+Route::put('/tasks/{task}', [TaskController::class, 'update'])->name('tasks.update');
