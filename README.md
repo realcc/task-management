@@ -20,13 +20,13 @@ This is a simple task management application built with Laravel.
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/laravel-task-management.git
+git clone https://github.com/realcc/task-management.git
 ```
 
 2. Change into the project directory:
 
 ```bash
-cd laravel-task-management
+cd task-management
 ```
 
 3. Copy the .env.example file to create a new .env file:
